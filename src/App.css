@@ -1,10 +1,28 @@
+
 .App {
-  text-align: center;
+
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.cards-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.character-card {
+  border: solid black 1px;
+  padding: 10px;
+  margin: 1rem;
+  box-sizing: border-box;
+}
+
+img {
+  width: 150px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
