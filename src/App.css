@@ -1,5 +1,16 @@
 
 .App {
+  text-align: center;
+}
+
+button {
+  margin: 1rem;
+  color: red;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  border: red solid 1px;
+  box-shadow: 2px 2px rgb(225, 225, 225);
 
 }
 
@@ -12,13 +23,22 @@
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .character-card {
   border: solid black 1px;
+  box-shadow: 5px 10px #888888;
   padding: 10px;
   margin: 1rem;
   box-sizing: border-box;
+  width: 170px;
+  height: max-content;
+  border-radius: 4px;
+}
+
+.dead {
+  border: solid red 2px;
 }
 
 img {

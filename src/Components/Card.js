@@ -1,11 +1,32 @@
 import React from 'react';
 
-export default function Card({character}) {
-  return (
-    <div className="character-card">
-      <img src={character.image} alt=""/>
-      <h2>{character.name}</h2>
-      <h3>{character.species}</h3>
-    </div>
-  )
+class Card extends React.Component {
+  
+  state = {
+    isClicked: false
+  }
+
+  render(){
+    const character = this.props.character
+
+    return (
+      <div className={ character.status === 'Dead' ? 'character-card dead': 'character-card'}>
+        <img 
+          src={character.image} 
+          onClick ={ () => this.setState({ isClicked: !this.state.isClicked})}
+          alt=""
+          />
+
+        { this.state.isClicked 
+          ? <>
+              <h2>{character.name}</h2>
+              <h3>Status: {character.status}</h3>
+              <p>{character.species} - {character.gender}</p>
+            </>
+          : null
+        }
+      </div>
+    )
+  }
 }
+export default Card
