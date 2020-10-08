@@ -19,11 +19,19 @@ button {
   pointer-events: none;
 }
 
-.cards-container {
-  box-sizing: border-box;
+.container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+
+  width: 70%
+}
+
+.favorite-container {
 }
 
 .character-card {
@@ -35,10 +43,29 @@ button {
   width: 170px;
   height: max-content;
   border-radius: 4px;
+  transition: all .2s ease-in-out;
+}
+
+.character-card:hover {
+  transform: scale(1.1);
+}
+
+.fav-card {
+  border: solid black 1px;
+  box-shadow: 5px 10px #888888;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 260px;
+  height: max-content;
+  border-radius: 4px;
+}
+
+.fav-card img {
+  width: 240px;
 }
 
 .dead {
-  border: solid red 2px;
+  color: solid red 2px;
 }
 
 img {

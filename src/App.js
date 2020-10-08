@@ -1,26 +1,24 @@
 import React from 'react';
 import './App.css';
-import CardsContainer from './Components/CardsContainer';
+import Container from './Components/Container';
 
 class App extends React.Component {
+  
   state = {
     characters: []
   }
 
-  handleClick = (event) => {
+  componentDidMount(){
     fetch('https://rickandmortyapi.com/api/character')
-    .then(response => response.json())
-    .then(data => this.setState({characters: data.results}))
+      .then(response => response.json())
+      .then(data => this.setState({characters: data.results}))
   }
 
   render(){
     return (
       <div className="App">
         <h1>Rick and Morty App</h1>
-        <button onClick={this.handleClick}>Fetch Characters</button>
-        <div className="cards-container">
-          <CardsContainer characters = { this.state.characters }/>
-        </div>
+        <Container characters = { this.state.characters } />
       </div>
     )
   }
